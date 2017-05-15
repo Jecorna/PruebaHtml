@@ -94,12 +94,66 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html  {
+  box-sizing: border-box;
+}
+*,*:before, *:after {
+box-sizing: inherit;
+}
+body {
+  background-color: #f2f2f2:
+}
+div.hero {
+  background-image: url(../img/encabezado.jpg);
+  height: 100vh;
+  background-position: left; top center;
+  background-size: cover;
+}
+div.contenido-header {
+  padding-top: 40px
+}
 
+nav.redes-sociales{
+  text-align: center;
+}
+nav.redes-sociales a {
+  color: white;
+  font-size: 2em;
+  margin-right: 20px;
+}
+nav.redes-sociales a: last-child {
+  margin-right: 0;
+}
+@@media only screen and (min-width:768px) {
+  div,informacion-evento{
+    width: 70%;
+    margin: 0 auto;
+  }
+  div.contenido-header {
+    padding-top: 10px;
+  }
 
-
-
-
-
+}
+div.informacion-evento {
+   text-align: center;
+   color: white;
+}
+div.informacion-evento p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+div.informacion-evento p i {
+  color: #fe4918;
+}
+p.fecha {
+    float: left;
+}
+p.ciudad {
+  float: right;
+  text-align: right;
+}
 
 
 
