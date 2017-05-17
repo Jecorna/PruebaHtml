@@ -102,6 +102,7 @@ box-sizing: inherit;
 }
 body {
   background-color: #f2f2f2:
+  font-family: 'Open Sans', sans-serif;
 }
 div.hero {
   background-image: url(../img/encabezado.jpg);
@@ -124,19 +125,22 @@ nav.redes-sociales a {
 nav.redes-sociales a: last-child {
   margin-right: 0;
 }
-@@media only screen and (min-width:768px) {
-  div,informacion-evento{
+@media only screen and (min-width:768px) {
+  div.informacion-evento{
     width: 70%;
     margin: 0 auto;
   }
   div.contenido-header {
     padding-top: 10px;
   }
-
+  h1.nombre-sitio{
+    font-size: 11.5vw;
+    margin: 0;
+  }
 }
 div.informacion-evento {
-   text-align: center;
-   color: white;
+  text-align: center;
+   color: #ffffff;
 }
 div.informacion-evento p {
   margin: 0;
@@ -145,17 +149,30 @@ div.informacion-evento p {
   text-transform: uppercase;
 }
 div.informacion-evento p i {
+  font-size: 2rem;
   color: #fe4918;
 }
 p.fecha {
     float: left;
 }
-p.ciudad {
+p.Ciudad {
   float: right;
   text-align: right;
 }
-
-
+h1.nombre-sitio{
+      font-size: 5.9vw;
+  font-family: 'PT Sans', sans-serif;
+}
+h2{
+  font-family: 'Oswald', sans-serif;
+}
+p.slogan{
+  text-transform: none!important;
+}
+p.slogan span {
+  font-size: 5.9vw:
+  font-weight: bold;
+}
 
 
 
