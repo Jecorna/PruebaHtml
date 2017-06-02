@@ -183,6 +183,8 @@ p.slogan span {
     margin: 0 auto;
   }
   nav.redes-sociales a {
+    width: 100%;
+    text-align: center;
     color: white;
     font-size: 1em;
     margin-right: 20px;
@@ -214,6 +216,7 @@ div.barra {
 }
 div.logo  {
   width: 80%;
+  float: left;
 }
 div.logo img {
   width: 33%;
@@ -254,13 +257,50 @@ nav.navegacion-principal a {
     display: block;
   }
   nav.navegacion-principal a {
-    margin-right: 10px;
     padding: 10px 10px;
     display: inline-block;
-
+    width: auto;
+    text-align: center;
+    margin:20px 10px 0 0;
   }
 }
 
+/* Menú  Móvil*/
+  div.menu-movil {
+  width: 60px;
+  display: block;
+  float: right;
+  text-align: right;
+  margin-top: 12px;
+}
+  div.menu-movil span {
+    height: 8px;
+    margin-bottom: 6px;
+    background-color: white;
+    display: block;
+  }
+  @media only screen and (min-width: 768px) {
+    div.menu-movil{
+      display: none;
+    }
+  }
+  /*menu movil */
+  div.menu-movil{
+    width: 60px;
+    float: right;
+    text-align: right;
+    margin-top: 12px;
+  }
+    div.menu-movil:hover{
+      cursor: pointer;
+    }
+
+div.menu-movil span{
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: white;
+  display: block;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
