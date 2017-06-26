@@ -301,6 +301,57 @@ div.menu-movil span{
   background-color: white;
   display: block;
 }
+.seccion p{
+  font-size: 1.2em;
+  text-align: center;
+}
+.seccion {
+  padding: 30px 0;
+}
+h2{
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.4em;
+  text-transform: uppercase;
+  text-align: center;
+}
+h2::after{
+  content: '';
+  margin: 0 auto;
+  background-image: url(../img/separador.png);
+  height: 30px;
+  width: 100px;
+  display: block;
+}
+/* talleres*/
+section.programa{
+  position: relative;
+}
+div.contenedor-video{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+div.contenido-programa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+div.programa-evento{
+  background-color: rgba(225,255,255, .8);
+  padding: 15px;
+  margin-top: 80px;
+}
+  @media only screen and (min-width: 768px) {
+    div.programa-evento{
+      width: 70%;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    div.programa-evento{
+      width: 50%;
+    }
+  }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
