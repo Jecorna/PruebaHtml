@@ -540,7 +540,9 @@ div.contador::before{
 ul.resumen-evento{
  position: relative;
  padding: 120px 0;
-
+div.resumen{
+      height: auto;
+}
 }
 ul.resumen-evento li {
   width: 50%;
@@ -824,7 +826,7 @@ div.paquetes .tabla-precio input{
 }
 .contenido-dia{
   padding: 20px;
-  /*display: none;*/
+  display: none;
 }
 @media only screen and (min-width:768px) {
 .contenido-dia > div{
@@ -876,7 +878,16 @@ div.resumen input {
   display: block;
   margin: 10px auto;
 }
-
+#lista-productos {
+  background-color: #e1e1e1;
+  font-style: italic;
+  padding: 5px;
+}
+#suma-total{
+  text-align: center;
+  font-size: 1em;
+  color: #fe4918;
+}
 /*  /Registro */
 /*  /internas */
 /* ==========================================================================

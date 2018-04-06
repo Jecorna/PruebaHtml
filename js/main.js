@@ -2,7 +2,6 @@
   "use strict";
   var regalo = document.getElementById('regalo');
   document.addEventListener('DOMContentLoaded', function(){
-    console.log("Listo");
 
     // Campos Pases
       var nombre  = document.getElementById('nombre');
@@ -24,13 +23,19 @@
       var calcular  = document.getElementById('calcular');
       var errorDiv  = document.getElementById('error');
       var botonRegistro  = document.getElementById('botonRegistro');
-      var  resultado = document.getElementById('lista-productos');
-
+      var  lista_productos = document.getElementById('lista-productos');
+      var suma = document.getElementById('suma-total');
       // extras
       var etiquetas = document.getElementById('etiquetas');
       var camisas = document.getElementById('camisa_evento');
 
       calcular.addEventListener('click', calcularMontos);
+
+
+      pase_di.addEventListener('blur', mostrarDias);
+      pase_dosdias.addEventListener('blur', mostrarDias);
+      pase_completo.addEventListener('blur', mostrarDias);
+
 
       function calcularMontos (event){
         event.preventDefault();
@@ -38,10 +43,10 @@
           alert('debes elegir un regalo');
           regalo.focus();
         }else {
-          console.log(pase_dia.value);
+          console.log(pase_di.value);
           console.log(pase_dosdias.value);
           console.log(pase_completo.value);
-          var boletosDia = parseInt(pase_dia.value, 10) || 0,
+          var boletosDia = parseInt(pase_di.value, 10) || 0,
               boletosDos = parseInt(pase_dosdias.value,10) || 0,
               boletosCom = parseInt(pase_completo.value, 10) || 0,
               cantCamisas = parseInt(camisas.value, 10) || 0,
@@ -57,10 +62,43 @@
            if (boletosCom >=1){
            listadoProductos.push(boletosCom + ' Pases por compeltos');
          }
-          console.log(listadoProductos);
-           alert("Tienes que pagar:" + totalPagar);
-        }
-      }
+         if (cantCamisas >=1){
+         listadoProductos.push(cantCamisas + ' Camisas');
+       }
+       if (cantEtiquetas >=1){
+       listadoProductos.push(cantEtiquetas + ' Etiquetas');
+     }
+     lista_productos.style.display= "block";
+      lista_productos.innerHTML = '';
+     for(var i = 0 ; i <listadoProductos.length; i++){
+       lista_productos.innerHTML += listadoProductos[i] + '<br/>';
+     }
+     suma.innerHTML = "$ " + totalPagar.toFixed(2);
+    }
+  }
+
+  function mostrarDias() {
+    var boletosDia = parseInt(pase_di.value, 10) || 0,
+        boletosDos = parseInt(pase_dosdias.value,10) || 0,
+        boletosCom = parseInt(pase_completo.value, 10) || 0;
+    var diasElegidos = [];
+    if (boletosDia > 0) {
+      diasElegidos.push('viernes');
+      console.log(diasElegidos);
+    }
+    if (boletosDos > 0) {
+      diasElegidos.push('viernes','sabado');
+      console.log(diasElegidos);
+    }
+    if (boletosCom > 0) {
+      diasElegidos.push('viernes', 'sabado', 'domingo');
+      console.log(diasElegidos);
+    }
+    for (var i = 0; i < diasElegidos.length; i++) {
+      document.getElementById(diasElegidos[i]).style.display = 'block';
+    }
+
+  }
 });//codigo que solo se ejecuta una vez
 
 
