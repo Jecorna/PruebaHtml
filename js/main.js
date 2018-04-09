@@ -1,3 +1,5 @@
+var api = 'AIzaSyAPHUn_YBWssyNirbUaDG8VOS2uFDu9Tho';
+
 (function(){
   "use strict";
   var regalo = document.getElementById('regalo');
@@ -36,6 +38,41 @@
       pase_dosdias.addEventListener('blur', mostrarDias);
       pase_completo.addEventListener('blur', mostrarDias);
 
+      nombre.addEventListener('blur', validarCampos);
+      apellido.addEventListener('blur', validarCampos);
+      email.addEventListener('blur', validarCampos);
+      email.addEventListener('blur', validarMail);
+
+      function validarCampos() {
+        var valida ;
+        do {
+          if (this.value == '') {
+              errorDiv.style.display = 'block';
+              errorDiv.innerHTML = "Este campo es obligatorio";
+              this.style.border = '1px solid red';
+              errorDiv.style.border = '1px solid red';
+              return valida = 0;
+          }else {
+            errorDiv.style.display = 'none';
+            errorDiv.innerHTML = "Este campo es obligatorio";
+            this.style.border = '1px solid black';
+            errorDiv.style.border = '1px solid red';
+            return valida = 1;
+          }
+        } while (valida.value = 1);
+        console.log(valida.value);
+      }
+      function validarMail(){
+        if (this.value.indexOf("@") > -1) {
+          errorDiv.style.display = 'none';
+          this.style.border = '1px solid black';
+        }else {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = "Debe estar completo @";
+          this.style.border = '1px solid red';
+          errorDiv.style.border = '1px solid red';
+        }
+      };
 
       function calcularMontos (event){
         event.preventDefault();
