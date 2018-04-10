@@ -1,5 +1,31 @@
-var api = 'AIzaSyAPHUn_YBWssyNirbUaDG8VOS2uFDu9Tho';
+var api = 'AIzaSyAhRpWTEBX0bFgE6ZcdjN7KlrX6K8e-Vqg';
 
+function initMap() {
+  var latLng = {
+    lat: 19.3804874,
+    lng:-99.1837965
+  };
+
+  var map = new google.maps.Map(document.getElementById('mapa'), {
+    'center': latLng,
+    'zoom': 17,
+    'mapTypeId': google.maps.MapTypeId.ROADMAP
+
+  });
+  var contenido = '<h2>ServerWare</h2>'+
+                    '<p>Somos tu mejor opción</p>'+
+                    '<p>¡¡¡Visitanos!!!</p>';
+  var informacion = new google.maps.InfoWindow({
+    content: contenido
+  });
+  var marker = new google.maps.Marker({
+  position: latLng,
+  map: map
+});
+marker.addListener('click', function(){
+  informacion.open(map, marker);
+});
+}
 (function(){
   "use strict";
   var regalo = document.getElementById('regalo');
